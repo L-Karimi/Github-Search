@@ -1,7 +1,15 @@
-<!-- <form class="form-inline md-form mr-auto mb-4">
+<form class="form-inline md-form mr-auto mb-4">
   <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
   <button mdbBtn size="sm" gradient="aqua" rounded="true" class="my-0 waves-light" mdbWavesEffect
     type="submit">Search</button>
-</form> -->
+</form>
 
+<div class="users">
+  *ngFor="let user of users"
+  {{user.avatar_url}}
+  {{user.name}}
+  {{user.public_repos}}
+  {{user.followers}
+  {{user.following}}
+</div>
 
