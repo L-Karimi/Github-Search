@@ -1,33 +1,38 @@
 import { Injectable } from '@angular/core';
-// import { from, throwError } from 'rxjs';
-import { HttpClient} from '@angular/common/http';
- import { from, throwError } from'rxjs';  
- import {environment} from '../environments'
+//  import { from, throwError } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { from, throwError } from 'rxjs';
+import { environment } from '../environments/environment'
+import { Repos } from './repos'
+import { Search } from './search'
 @Injectable({
   providedIn: 'root'
 
 })
 export class ProfileService {
 
-  constructor(private http:HttpClient){}
 
-getGithubRepositories(){
-  const username='luciahroyalty101'
-  return this.http.get('https://api.github.com/users/${username}/repos').pipe(map(reop=>{
+  constructor(private http: HttpClient) {
 
-  }),catchError(error=>) {
-    return throwError(Error);
-  });
+  }
+
+  getGithubRepositories(term: string) {
+    const endpoint = `https://api.github.com/search/repositories?access_token=${environment.Api_Key}&q=${term}`;
+    return this.http.get(endpoint);
+
+  }
+  getGithubUsers(term: string)
+  const endpoint = `https://api.github.com/search/users?access_token=${environment.Api_Key}&q=${term}`;
+return this.http.get(endpoint);
 }
-}
 
-  // private username: string;
-  // private api: '5308415a8b81860a1832861243ab85ba5590292f'
-  // constructor(private http: Http) { }
-  // // console.log('Service is now ready');
-  // this.username = 'luciahroyalty101'
-// }
-// getProfileInfo(){
-//   return.thishttp.get("https:/https://api.github.com/users/".this.username.?private api).map(res=>.json(();
-// }
-// }
+
+
+
+
+
+
+
+
+
+
