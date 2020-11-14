@@ -1,4 +1,7 @@
+import { StaticSymbol } from '@angular/compiler';
+import { getInterpolationArgsLength } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit } from '@angular/core';
+import { ProfileService} from '../profile.service'
 
 @Component({
   selector: 'app-repos',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReposComponent implements OnInit {
 
-  constructor() { }
+  repos: any[]= [];
 
+  constructor(public pservices: ProfileService) { }
+    // username='name'
+    // Repositories='repos'
+ 
   ngOnInit(): void {
+      this.pservices.getGithubRepositories("lucy")
+      .subscribe((response: any)=>
+      this.repos=response.items)
   }
 
 }
