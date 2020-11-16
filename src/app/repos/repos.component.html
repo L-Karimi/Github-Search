@@ -1,5 +1,6 @@
 <app-search (searchGitUser)='getUserProfile($event)'></app-search>
-<div id="cards">
+<div appHighlight id="cards">
+  <ng-progress></ng-progress>
   <div class="container">
     <div class="row">
       <div class="col-md-6">
@@ -40,7 +41,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title" class="text-center">Name: {{repo.name}}</h5>
-              <p>Description: {{repo.description}}</p>
+              <p><b>Description: </b>{{repo.description}}</p>
             </div>
             <div class="card-body">
               <a href="{{repo.html_url}}" class="card-link">Github link</a>
@@ -51,3 +52,6 @@
     </div>
   </div>
 </div>
+<!-- <div class="container">
+  <ng-progress></ng-progress>
+  <h1><GIthub-Search></h1> -->
