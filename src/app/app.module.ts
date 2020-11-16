@@ -9,7 +9,11 @@ import { SearchComponent } from './search/search.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FilterPipe } from './filter.pipe';
 import {HttpClientModule } from '@angular/common/http'
-import{FormsModule} from '@angular/forms'
+import{FormsModule} from '@angular/forms';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { HighlightDirective } from './highlight.directive'
+
+
 
 
 @NgModule({
@@ -19,15 +23,18 @@ import{FormsModule} from '@angular/forms'
     SearchComponent,
     NavbarComponent,
     FilterPipe,
-    
+    NotFoundComponent,
+    HighlightDirective,
+    // NgProgressHttpClientModule;
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-    // NgProgressModule.forRoot(),
-    // NgProgressHttpClientModule
+    FormsModule,
+    NgProgressModule.forRoot(),
+    NgProgressHttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
