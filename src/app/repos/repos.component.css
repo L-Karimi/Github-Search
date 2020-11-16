@@ -1,5 +1,5 @@
 #cards{
-    background-color: aqua;
+        box-shadow: coral;
 }
 
 #sm{
@@ -9,4 +9,9 @@
 }
 #pat{
     margin-bottom: 10px;
+    box-shadow: crimson;
+}
+h5{
+    font-size: 20px;
+    color: blue;
 }
